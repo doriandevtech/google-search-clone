@@ -1,19 +1,19 @@
 import React from 'react';
-import { Router, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Navigate } from 'react-router-dom';
 
 import { Results } from './Results';
 
 function Routes() {
   return (
     <div className='p-4'>
-        <Router>
+        <Switch>
           <Route exact path="/">
-            <Redirect to="/search" />
+            <Navigate to="/search" />
           </Route>
           <Route path={['/search', '/images', '/news', '/videos']}>
             <Results />
           </Route>
-        </Router>
+        </Switch>
     </div>
   )
 }
